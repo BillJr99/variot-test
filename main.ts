@@ -1,11 +1,4 @@
-ESP8266VarIOT.connectWifi(
-SerialPin.P0,
-SerialPin.P1,
-BaudRate.BaudRate115200,
-"",
-""
-)
-basic.forever(function () {
+input.onButtonPressed(Button.A, function () {
     if (ESP8266VarIOT.isWifiConnected()) {
         ESP8266VarIOT.sendVarIOTTelemetry(
         "rpi4-variot",
@@ -34,3 +27,10 @@ basic.forever(function () {
         }
     }
 })
+ESP8266VarIOT.connectWifi(
+SerialPin.P0,
+SerialPin.P1,
+BaudRate.BaudRate115200,
+"",
+""
+)
