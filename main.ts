@@ -8,11 +8,11 @@ BaudRate.BaudRate115200,
 basic.forever(function () {
     if (ESP8266VarIOT.isWifiConnected()) {
         ESP8266VarIOT.sendVarIOTTelemetry(
-        "https://rpi4-variot",
-        "443",
-        "",
-        "temperature",
-        30
+        "rpi4-variot",
+        "5000",
+        "mongan",
+        "temp",
+        "50"
         )
     }
 })
