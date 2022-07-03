@@ -5,6 +5,12 @@ BaudRate.BaudRate115200,
 "",
 ""
 )
+basic.pause(5000)
+if (ESP8266VarIOT.isWifiConnected()) {
+    basic.showIcon(IconNames.Heart)
+} else {
+    basic.showIcon(IconNames.No)
+}
 basic.forever(function () {
     if (ESP8266VarIOT.isWifiConnected()) {
         ESP8266VarIOT.sendVarIOTTelemetry(
@@ -15,12 +21,6 @@ basic.forever(function () {
         50
         )
         basic.pause(5000)
-        if (ESP8266VarIOT.isWifiConnected()) {
-            basic.showIcon(IconNames.Heart)
-        } else {
-            basic.showIcon(IconNames.No)
-        }
-        basic.pause(1000)
         if (ESP8266VarIOT.isVarIOTConnected()) {
             basic.showIcon(IconNames.Yes)
         } else {
