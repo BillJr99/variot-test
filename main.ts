@@ -12,7 +12,7 @@ basic.forever(function () {
         "5000",
         "mongan",
         "temp",
-        "50"
+        50
         )
     }
 })
