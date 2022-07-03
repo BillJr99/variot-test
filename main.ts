@@ -1,3 +1,4 @@
+let ready = 0
 ESP8266VarIOT.connectWifi(
 SerialPin.P0,
 SerialPin.P1,
@@ -11,8 +12,11 @@ if (ESP8266VarIOT.isWifiConnected()) {
 } else {
     basic.showIcon(IconNames.No)
 }
+basic.pause(1000)
+basic.clearScreen()
+ready = 1
 basic.forever(function () {
-    if (ESP8266VarIOT.isWifiConnected()) {
+    if (ready == 1) {
         ESP8266VarIOT.sendVarIOTTelemetry(
         "rpi4-variot",
         "5000",

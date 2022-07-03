@@ -6,13 +6,14 @@
         "radio": "*",
         "microphone": "*",
         "datalogger": "*",
-        "pxt-esp8266_variot": "github:billjr99/pxt-esp8266_variot#master"
+        "pxt-esp8266_variot": "pkg:pxt-esp8266_variot.json"
     },
     "files": [
         "main.blocks",
         "main.ts",
         "README.md",
-        "pxt-esp8266_variot.json"
+        "pxt-esp8266_variot.json",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
