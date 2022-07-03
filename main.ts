@@ -14,5 +14,23 @@ basic.forever(function () {
         "temp",
         50
         )
+        basic.pause(5000)
+        if (ESP8266VarIOT.isWifiConnected()) {
+            basic.showIcon(IconNames.Heart)
+        } else {
+            basic.showIcon(IconNames.No)
+        }
+        basic.pause(1000)
+        if (ESP8266VarIOT.isVarIOTConnected()) {
+            basic.showIcon(IconNames.Yes)
+        } else {
+            basic.showIcon(IconNames.Chessboard)
+        }
+        basic.pause(1000)
+        if (ESP8266VarIOT.isLastUploadSuccessful()) {
+            basic.showIcon(IconNames.Happy)
+        } else {
+            basic.showIcon(IconNames.Sad)
+        }
     }
 })
