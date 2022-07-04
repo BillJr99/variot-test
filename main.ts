@@ -3,9 +3,10 @@ ESP8266VarIOT.connectWifi(
 SerialPin.P0,
 SerialPin.P1,
 BaudRate.BaudRate115200,
-"",
+"mongan",
 ""
 )
+ESP8266VarIOT.configureVarIOT("rpi4-variot", "5000")
 basic.pause(5000)
 if (ESP8266VarIOT.isWifiConnected()) {
     basic.showIcon(IconNames.Heart)
@@ -17,13 +18,7 @@ basic.clearScreen()
 ready = 1
 basic.forever(function () {
     if (ready == 1) {
-        ESP8266VarIOT.sendVarIOTTelemetry(
-        "rpi4-variot",
-        "5000",
-        "mongan",
-        "temp",
-        50
-        )
+        ESP8266VarIOT.sendVarIOTTelemetry("mongan", "temp", 50)
         basic.pause(5000)
         if (ESP8266VarIOT.isVarIOTConnected()) {
             basic.showIcon(IconNames.Yes)
